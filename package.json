@@ -1,0 +1,17 @@
+{
+  "name": "bf-interpreter",
+  "version": "1.0.0",
+  "description": "Brainfuck language interpreter.",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "npx eslint",
+    "start": "npx ts-node index.ts"
+  },
+  "author": "Marin Călin",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.18",
+    "rxjs": "^7.5.4",
+    "ts-node": "^10.5.0"
+  }
+}

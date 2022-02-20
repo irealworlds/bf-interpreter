@@ -32,7 +32,7 @@ export class Interpreter
      * Run the interpreter.
      */
     async interpret(input: string) {
-        const instructions = input.split('').map(i => i as Instructions);
+        const instructions = input.trim().split('').map(i => i as Instructions);
         for (let index = 0; index < instructions.length; index++) {
             const instruction = instructions[index];
             switch (instruction) {
@@ -58,6 +58,16 @@ export class Interpreter
 
                 case Instructions.MoveRight:
                     this.memory.pointer += 1;
+                    break;
+
+                case Instructions.ControlStart:
+                    if (this.memory.current !== 0) {
+                        index = this._controlStack.pop() - 1;
+                    }
+                    break;
+
+                case Instructions.ControlEnd:
+                    this._controlStack.push(index);
                     break;
 
                 default:

@@ -6,6 +6,8 @@ export class Interpreter
 {
     memory: MemorySet;
 
+    private _controlStack: number[] = [];
+
     constructor() {
         this.memory = new MemorySet();
     }
@@ -48,6 +50,14 @@ export class Interpreter
 
                 case Instructions.Decrease:
                     this.memory.current = this.memory.current - 1;
+                    break;
+
+                case Instructions.MoveLeft:
+                    this.memory.pointer -= 1;
+                    break;
+
+                case Instructions.MoveRight:
+                    this.memory.pointer += 1;
                     break;
 
                 default:

@@ -12,6 +12,6 @@
   "dependencies": {
     "@types/node": "^17.0.19",
     "rxjs": "^7.5.4",
-    "ts-node": "^10.5.0"
+    "ts-node": "^10.9.1"
   }
 }
